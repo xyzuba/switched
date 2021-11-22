@@ -5,6 +5,7 @@ import express from "express";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
+// import cors from "cors";
 // import session from "express-session";
 
 const main = async () => {
@@ -34,9 +35,17 @@ const main = async () => {
     plugins: [ApolloServerPluginLandingPageGraphQLPlayground],
   });
 
+  // app.use(
+  //   cors({
+  //     credentials: true,
+  //     origin: "http://localhost:3000",
+  //   })
+  // );
+
   await apolloServer.start();
   apolloServer.applyMiddleware({
     app,
+    // cors: false,
   });
 
   app.listen(5000, () => {

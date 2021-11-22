@@ -17,8 +17,8 @@ class ProductInput {
   desc: string;
   @Field()
   price: number;
-  @Field()
-  image: string;
+  @Field({ nullable: true })
+  image?: string;
 }
 
 @Resolver(Product)

@@ -1,10 +1,10 @@
+import "reflect-metadata";
 import path from "path";
 import { createConnection } from "typeorm";
 import express from "express";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
-import { UserResolver } from "./resolvers/user";
 // import session from "express-session";
 
 const main = async () => {
@@ -16,7 +16,7 @@ const main = async () => {
     logging: true,
     synchronize: true,
     migrations: [path.join(__dirname, "/migrtions/*")],
-    entities: [],
+    entities: [path.join(__dirname, "/entities/*")],
   });
   conn.runMigrations();
 
@@ -24,7 +24,7 @@ const main = async () => {
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [UserResolver],
+      resolvers: [path.join(__dirname, "/resolvers/*.[j,t]s")],
       validate: false,
     }),
     context: ({ req, res }) => ({

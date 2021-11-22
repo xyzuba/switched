@@ -25,15 +25,12 @@ const Index = () => {
     <Grid spacing={12} gap={6} mb={8} templateColumns="repeat(5, 1fr)">
       {data?.products?.map((p) =>
         !p ? null : (
-          // <Grid templateColumns="repeat(2, 1fr)" gap={6}>
           <Box
             key={p.id}
             p={5}
             shadow="md"
             borderWidth="1px"
             borderRadius="10px"
-            // w="100%"
-            // h="100%"
           >
             <Flex justifyContent="space-between">
               <Link>
@@ -45,7 +42,6 @@ const Index = () => {
               ${p.price}
             </Text>
           </Box>
-          // </Grid>
         )
       )}
     </Grid>

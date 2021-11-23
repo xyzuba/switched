@@ -5,7 +5,7 @@ import React from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider resetCSS={true}>
+    <ChakraProvider>
       <Component {...pageProps} />
     </ChakraProvider>
   );

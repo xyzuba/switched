@@ -1,13 +1,14 @@
-import { Box, Flex, Heading, IconButton, Link } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, IconButton, Link } from "@chakra-ui/react";
 import React from "react";
 import NextLink from "next/link";
 import { QuestionIcon, Search2Icon, WarningIcon } from "@chakra-ui/icons";
+import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 
 interface NavBarProps {}
 
 export const NavBar: React.FC<NavBarProps> = () => {
   return (
-    <Box zIndex={1} position="sticky" top={0} bg="teal" p={4}>
+    <Box zIndex={1} position="sticky" top={0} bg="#6699cc" p={4}>
       <Flex
         justifyContent="space-between"
         ml={"auto"}
@@ -29,25 +30,19 @@ export const NavBar: React.FC<NavBarProps> = () => {
             <Link mx={6}>collections</Link>
             <Link mx={6}>newest</Link>
           </Flex>
-          <Flex mx={2}>
-            <IconButton
-              aria-label=""
-              mx={2}
-              variant="ghost"
-              icon={<QuestionIcon />}
-            />
+          <Flex>
+            <Button aria-label="" mx={2} fontSize={20} p={0} variant="ghost">
+              <AiOutlineShoppingCart />
+            </Button>
             <IconButton
               aria-label=""
               variant="ghost"
               mx={2}
               icon={<Search2Icon />}
             />
-            <IconButton
-              aria-label=""
-              variant="ghost"
-              mx={2}
-              icon={<WarningIcon />}
-            />
+            <Button aria-label="" mx={2} fontSize={20} p={0} variant="ghost">
+              <AiOutlineUser />
+            </Button>
           </Flex>
         </Flex>
       </Flex>

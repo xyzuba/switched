@@ -57,11 +57,7 @@ const Index = () => {
                 ${p.price}
               </Text>
               <Flex mt={2} justifyContent="center">
-                <IconButton
-                  colorScheme="teal"
-                  aria-label=""
-                  icon={<AddIcon />}
-                />
+                <IconButton color="#87ceeb" aria-label="" icon={<AddIcon />} />
               </Flex>
             </Box>
           )

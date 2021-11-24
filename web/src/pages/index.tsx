@@ -1,8 +1,10 @@
 import {
   Box,
+  Button,
   Flex,
   Grid,
   Heading,
+  IconButton,
   Link,
   Spinner,
   Stack,
@@ -16,6 +18,7 @@ import { createUrqlClient } from "../utils/createUrlqClient";
 //@ts-ignore
 import { Image } from "cloudinary-react";
 import { Layout } from "../components/Layout";
+import { AddIcon } from "@chakra-ui/icons";
 
 const Index = () => {
   const [{ data, error, fetching }] = useProductsQuery();
@@ -53,6 +56,13 @@ const Index = () => {
               <Text textAlign="center" mt={4} fontSize={20}>
                 ${p.price}
               </Text>
+              <Flex mt={2} justifyContent="center">
+                <IconButton
+                  colorScheme="teal"
+                  aria-label=""
+                  icon={<AddIcon />}
+                />
+              </Flex>
             </Box>
           )
         )}

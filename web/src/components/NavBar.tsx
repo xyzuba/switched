@@ -2,7 +2,11 @@ import { Box, Button, Flex, Heading, IconButton, Link } from "@chakra-ui/react";
 import React from "react";
 import NextLink from "next/link";
 import { QuestionIcon, Search2Icon, WarningIcon } from "@chakra-ui/icons";
-import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
+import {
+  AiOutlineSearch,
+  AiOutlineShoppingCart,
+  AiOutlineUser,
+} from "react-icons/ai";
 
 interface NavBarProps {}
 
@@ -34,12 +38,9 @@ export const NavBar: React.FC<NavBarProps> = () => {
             <Button aria-label="" mx={2} fontSize={20} p={0} variant="ghost">
               <AiOutlineShoppingCart />
             </Button>
-            <IconButton
-              aria-label=""
-              variant="ghost"
-              mx={2}
-              icon={<Search2Icon />}
-            />
+            <Button aria-label="" variant="ghost" mx={2}>
+              <AiOutlineSearch />
+            </Button>
             <Button aria-label="" mx={2} fontSize={20} p={0} variant="ghost">
               <AiOutlineUser />
             </Button>

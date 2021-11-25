@@ -17,8 +17,6 @@ class ProductInput {
   desc: string;
   @Field()
   price: number;
-  @Field({ nullable: true })
-  image?: string;
 }
 
 @Resolver(Product)
@@ -34,7 +32,10 @@ export class ProductResolver {
   }
 
   @Mutation(() => Product)
-  createProduct(@Arg("input") input: ProductInput): Promise<Product> {
-    return Product.create(input).save();
+  createProduct(
+    @Arg("input") input: ProductInput,
+    @Arg("img") img: string
+  ): Promise<Product> {
+    return Product.create({ ...input, image: img }).save();
   }
 }

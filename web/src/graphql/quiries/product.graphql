@@ -1,0 +1,11 @@
+query Product($id: Int!) {
+  product(id: $id) {
+    id
+    name
+    desc
+    image
+    price
+    createdAt
+    updatedAt
+  }
+}

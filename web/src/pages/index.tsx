@@ -19,6 +19,7 @@ import { createUrqlClient } from "../utils/createUrlqClient";
 import { Image } from "cloudinary-react";
 import { Layout } from "../components/Layout";
 import { AddIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
 
 const Index = () => {
   const [{ data, error, fetching }] = useProductsQuery();
@@ -35,8 +36,6 @@ const Index = () => {
             <Box
               key={p.id}
               p={5}
-              // shadow="md"
-              // // borderWidth="1px"
               outline="transparent"
               borderRadius="10px"
               _hover={{
@@ -50,9 +49,11 @@ const Index = () => {
                 publicId={"asd_yuhxdh"}
                 width="max-content"
               />
-              <Text my={2} textAlign="center">
-                <Heading fontSize={25}>{p.name}</Heading>
-              </Text>
+              <NextLink href="product/[id]" as={`product/${p.id}`}>
+                <Link my={2} textAlign="center">
+                  <Heading fontSize={25}>{p.name}</Heading>
+                </Link>
+              </NextLink>
               <Text textAlign="center" mt={4} fontSize={20}>
                 ${p.price}
               </Text>

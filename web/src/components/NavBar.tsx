@@ -36,13 +36,13 @@ export const NavBar: React.FC<NavBarProps> = () => {
           </Flex>
           <Flex>
             <Button aria-label="" mx={2} fontSize={20} p={0} variant="ghost">
-              <AiOutlineShoppingCart />
+              <AiOutlineUser />
             </Button>
-            <Button aria-label="" variant="ghost" mx={2}>
+            <Button aria-label="" mx={2} fontSize={20} p={0} variant="ghost">
               <AiOutlineSearch />
             </Button>
             <Button aria-label="" mx={2} fontSize={20} p={0} variant="ghost">
-              <AiOutlineUser />
+              <AiOutlineShoppingCart />
             </Button>
           </Flex>
         </Flex>
